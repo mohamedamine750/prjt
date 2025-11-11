@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Clear Aether — Community Impact & Reporting</title>
+  <title>Clear Aether — Back Office Community Impact</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -207,6 +207,29 @@
     }
 
     .card-footer{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px;margin-top:12px}
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.02);
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--vivid-green);
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+    }
   </style>
 </head>
 <body>
@@ -216,149 +239,90 @@
       <div class="logo">G+</div>
       <div>
         <h1>Clear Aether — Community Impact & Reporting</h1>
-        <div style="color:var(--muted);font-size:13px">Module M3 — Front Office</div>
+        <div style="color:var(--muted);font-size:13px">Module M3 — Back Office Administrateur</div>
       </div>
     </div>
 
     <nav>
-      <a href="#submit">Soumettre</a>
-      <a href="#actions">Mes Actions</a>
-      <a href="#impact">Mon Impact</a>
+      <a href="#pending">Actions en Attente</a>
+      <a href="#reports">Rapports</a>
+      <a href="#stats">Statistiques</a>
     </nav>
   </header>
 
   <main>
     <div class="tabs">
-      <a href="#submit" class="tab active">Soumettre une Action</a>
-      <a href="#actions" class="tab">Mes Actions</a>
-      <a href="#impact" class="tab">Mon Impact</a>
+      <a href="#pending" class="tab active">Actions en Attente</a>
+      <a href="#reports" class="tab">Générer Rapports</a>
+      <a href="#stats" class="tab">Statistiques Globales</a>
     </div>
 
-    <section id="submit">
-      <h2 style="margin-bottom:12px">Soumettre une Action Écologique</h2>
+    <section id="pending">
+      <h2 style="margin-bottom:12px">Validation des Actions</h2>
       
       <div class="grid">
         <article class="card">
           <div>
             <div class="accent m3"></div>
-            <h3>Nouvelle Action</h3>
-            <div class="meta">Rapporter une action écologique réalisée</div>
-
-            <div class="form">
-              <label>Type d'action</label>
-              <select>
-                <option value="">Sélectionnez un type d'action</option>
-                <option value="nettoyage">Nettoyage d'espace public</option>
-                <option value="plantation">Plantation d'arbres</option>
-                <option value="dechets">Réduction des déchets</option>
-                <option value="transport">Transport écologique</option>
-                <option value="sensibilisation">Sensibilisation</option>
-              </select>
-              
-              <label style="margin-top:8px">Description détaillée</label>
-              <textarea placeholder="Décrivez votre action en détail..."></textarea>
-              
-              <label style="margin-top:8px">Preuve (optionnel)</label>
-              <input type="text" placeholder="Lien vers une photo ou vidéo" />
-              
-              <div style="display:flex;gap:8px;margin-top:8px">
-                <button class="small-btn front">Soumettre l'action</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <span>Une fois soumis, l'action sera en attente de validation</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div>
-            <div class="accent m3"></div>
-            <h3>Types d'Actions Acceptées</h3>
-            <div class="meta">Exemples d'actions écologiques valides</div>
-
-            <div style="margin-top:12px">
-              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
-                <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--vivid-green);"></div>
-                <span style="font-size: 14px;">Nettoyage de parcs, plages, rues</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
-                <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--vivid-green);"></div>
-                <span style="font-size: 14px;">Plantation d'arbres et végétation</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
-                <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--vivid-green);"></div>
-                <span style="font-size: 14px;">Réduction et tri des déchets</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
-                <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--vivid-green);"></div>
-                <span style="font-size: 14px;">Utilisation de transport écologique</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--vivid-green);"></div>
-                <span style="font-size: 14px;">Activités de sensibilisation</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <span>Chaque action validée rapporte des points</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="actions" style="display:none">
-      <h2 style="margin-bottom:12px">Mes Actions Récentes</h2>
-      
-      <div class="grid">
-        <article class="card">
-          <div>
-            <div class="accent m3"></div>
-            <h3>Historique des Actions</h3>
-            <div class="meta">Toutes vos actions soumises</div>
+            <h3>Actions en Attente de Validation</h3>
+            <div class="meta">Valider ou rejeter les actions soumises</div>
 
             <div class="table-container">
               <table>
                 <thead>
                   <tr>
-                    <th>Date</th>
+                    <th>ID</th>
+                    <th>Joueur</th>
                     <th>Type</th>
-                    <th>Statut</th>
-                    <th>Score</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
+                    <td>#A-034</td>
+                    <td>Joueur42</td>
+                    <td>Nettoyage plage</td>
+                    <td>Collecte de déchets sur la plage...</td>
+                    <td>15/05/2023</td>
+                    <td>
+                      <button class="small-btn front" style="padding:4px 8px;font-size:11px" onclick="viewAction(34)">Voir</button>
+                      <button class="small-btn back" style="padding:4px 8px;font-size:11px" onclick="validateAction(34)">Valider</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#A-033</td>
+                    <td>EcoWarrior</td>
+                    <td>Plantation</td>
+                    <td>Plantation de 3 arbres dans le parc...</td>
+                    <td>14/05/2023</td>
+                    <td>
+                      <button class="small-btn front" style="padding:4px 8px;font-size:11px" onclick="viewAction(33)">Voir</button>
+                      <button class="small-btn back" style="padding:4px 8px;font-size:11px" onclick="validateAction(33)">Valider</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#A-032</td>
+                    <td>GreenLife</td>
+                    <td>Sensibilisation</td>
+                    <td>Atelier de sensibilisation dans une école...</td>
+                    <td>13/05/2023</td>
+                    <td>
+                      <button class="small-btn front" style="padding:4px 8px;font-size:11px" onclick="viewAction(32)">Voir</button>
+                      <button class="small-btn back" style="padding:4px 8px;font-size:11px" onclick="validateAction(32)">Valider</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#A-031</td>
+                    <td>NatureLover</td>
+                    <td>Transport</td>
+                    <td>Utilisation exclusive du vélo pendant 1 mois...</td>
                     <td>12/05/2023</td>
-                    <td>Nettoyage parc</td>
-                    <td><span style="color:var(--vivid-green)">✓ Validé</span></td>
-                    <td>85</td>
-                  </tr>
-                  <tr>
-                    <td>08/05/2023</td>
-                    <td>Plantation arbres</td>
-                    <td><span style="color:var(--vivid-green)">✓ Validé</span></td>
-                    <td>90</td>
-                  </tr>
-                  <tr>
-                    <td>02/05/2023</td>
-                    <td>Sensibilisation école</td>
-                    <td><span style="color:var(--muted)">⏳ En attente</span></td>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <td>28/04/2023</td>
-                    <td>Transport vélo</td>
-                    <td><span style="color:var(--vivid-green)">✓ Validé</span></td>
-                    <td>65</td>
-                  </tr>
-                  <tr>
-                    <td>25/04/2023</td>
-                    <td>Réduction déchets</td>
-                    <td><span style="color:var(--vivid-green)">✓ Validé</span></td>
-                    <td>70</td>
+                    <td>
+                      <button class="small-btn front" style="padding:4px 8px;font-size:11px" onclick="viewAction(31)">Voir</button>
+                      <button class="small-btn back" style="padding:4px 8px;font-size:11px" onclick="validateAction(31)">Valider</button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -366,132 +330,335 @@
           </div>
           
           <div class="card-footer">
-            <span>5 actions soumises • 4 validées</span>
+            <span>4 actions en attente de validation</span>
           </div>
         </article>
 
         <article class="card">
           <div>
             <div class="accent m3"></div>
-            <h3>Statistiques Personnelles</h3>
-            <div class="meta">Vos performances et tendances</div>
+            <h3>Détails de l'Action Sélectionnée</h3>
+            <div class="meta">Informations complètes pour validation</div>
 
-            <div style="display: flex; justify-content: space-around; margin: 20px 0;">
-              <div style="text-align: center;">
-                <div style="font-size: 24px; font-weight: 700; color: var(--vivid-green)">5</div>
-                <div style="font-size: 12px; color: var(--muted)">Actions totales</div>
+            <div style="margin-top:12px">
+              <div style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: 8px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                  <div>
+                    <div style="font-size: 13px; color: var(--muted)">Action ID</div>
+                    <div style="font-size: 14px; font-weight: 600;">#A-034</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 13px; color: var(--muted)">Joueur</div>
+                    <div style="font-size: 14px; font-weight: 600;">Joueur42</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 13px; color: var(--muted)">Date</div>
+                    <div style="font-size: 14px; font-weight: 600;">15/05/2023</div>
+                  </div>
+                </div>
+                
+                <div style="margin-bottom: 12px;">
+                  <div style="font-size: 13px; color: var(--muted)">Type d'action</div>
+                  <div style="font-size: 14px; font-weight: 600;">Nettoyage plage</div>
+                </div>
+                
+                <div style="margin-bottom: 12px;">
+                  <div style="font-size: 13px; color: var(--muted)">Description</div>
+                  <div style="font-size: 14px;">Collecte de déchets plastiques et verre sur la plage principale. Environ 8kg de déchets collectés en 2 heures.</div>
+                </div>
+                
+                <div>
+                  <div style="font-size: 13px; color: var(--muted)">Preuve fournie</div>
+                  <div style="font-size: 14px; color: var(--vivid-green); text-decoration: underline; cursor: pointer;">lien_vers_photo.jpg</div>
+                </div>
               </div>
-              <div style="text-align: center;">
-                <div style="font-size: 24px; font-weight: 700; color: var(--vivid-green)">80%</div>
-                <div style="font-size: 12px; color: var(--muted)">Taux validation</div>
+              
+              <div style="display: flex; gap: 8px; margin-top: 16px;">
+                <button class="small-btn back" style="flex: 1;">Valider l'Action</button>
+                <button class="small-btn" style="flex: 1; background: rgba(255,255,255,0.1);">Rejeter</button>
               </div>
-              <div style="text-align: center;">
-                <div style="font-size: 24px; font-weight: 700; color: var(--vivid-green)">4</div>
-                <div style="font-size: 12px; color: var(--muted)">Actions/mois</div>
-              </div>
-            </div>
-
-            <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; margin-top: 12px;">
-              <div style="font-size: 13px; color: var(--muted); margin-bottom: 6px;">Type d'action préféré:</div>
-              <div style="font-size: 14px; font-weight: 600;">Nettoyage d'espaces publics</div>
             </div>
           </div>
           
           <div class="card-footer">
-            <span>Continuez vos efforts!</span>
+            <span>Sélectionnez une action pour voir les détails</span>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="impact" style="display:none">
-      <h2 style="margin-bottom:12px">Mon Impact Personnel</h2>
+    <section id="reports" style="display:none">
+      <h2 style="margin-bottom:12px">Génération de Rapports d'Impact</h2>
       
       <div class="grid">
         <article class="card">
           <div>
             <div class="accent m3"></div>
-            <h3>Résumé de l'Impact</h3>
-            <div class="meta">Votre contribution écologique totale</div>
+            <h3>Créer un Rapport d'Impact</h3>
+            <div class="meta">Générer un rapport pour une action validée</div>
 
-            <div style="display: flex; justify-content: space-around; margin: 20px 0;">
-              <div style="text-align: center;">
-                <div style="font-size: 24px; font-weight: 700; color: var(--vivid-green)">310</div>
-                <div style="font-size: 12px; color: var(--muted)">Points totaux</div>
+            <div class="form">
+              <label>Sélectionner une action validée</label>
+              <select>
+                <option value="">Sélectionnez une action validée</option>
+                <option value="31">#A-031 - Transport vélo (NatureLover)</option>
+                <option value="30">#A-030 - Plantation arbres (EcoWarrior)</option>
+                <option value="29">#A-029 - Nettoyage parc (Joueur42)</option>
+                <option value="28">#A-028 - Sensibilisation (GreenLife)</option>
+              </select>
+              
+              <label style="margin-top:8px">Score d'impact (1-100)</label>
+              <select>
+                <option value="50">50 - Impact moyen</option>
+                <option value="65">65 - Bon impact</option>
+                <option value="80">80 - Très bon impact</option>
+                <option value="90">90 - Impact exceptionnel</option>
+                <option value="100">100 - Impact maximal</option>
+              </select>
+              
+              <label style="margin-top:8px">Description du rapport</label>
+              <textarea placeholder="Décrivez l'impact de cette action sur la communauté et l'environnement..."></textarea>
+              
+              <div style="display:flex;gap:8px;margin-top:8px">
+                <button class="small-btn back">Générer le Rapport</button>
               </div>
-              <div style="text-align: center;">
-                <div style="font-size: 24px; font-weight: 700; color: var(--vivid-green)">12.5kg</div>
-                <div style="font-size: 12px; color: var(--muted)">Déchets collectés</div>
-              </div>
-              <div style="text-align: center;">
-                <div style="font-size: 24px; font-weight: 700; color: var(--vivid-green)">8</div>
-                <div style="font-size: 12px; color: var(--muted)">Arbres plantés</div>
-              </div>
-            </div>
-
-            <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; margin-top: 12px;">
-              <div style="font-size: 13px; color: var(--muted); margin-bottom: 6px;">Équivalence CO₂ économisée:</div>
-              <div style="font-size: 14px; font-weight: 600;">~45 kg CO₂ eq</div>
             </div>
           </div>
           
           <div class="card-footer">
-            <span>Impact calculé sur 30 jours</span>
+            <span>Le rapport sera lié à l'action sélectionnée</span>
           </div>
         </article>
 
         <article class="card">
           <div>
             <div class="accent m3"></div>
-            <h3>Derniers Rapports d'Impact</h3>
-            <div class="meta">Analyses détaillées de vos actions</div>
+            <h3>Rapports Récents</h3>
+            <div class="meta">Historique des rapports générés</div>
 
-            <div style="margin-top: 12px;">
-              <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; margin-bottom: 10px;">
-                <div style="font-size: 13px; color: var(--muted)">12/05/2023 - Nettoyage parc</div>
-                <div style="font-size: 14px; margin-top: 6px;">"Votre action a permis de collecter 12kg de déchets et a inspiré 5 autres personnes à agir."</div>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Action ID</th>
+                    <th>Joueur</th>
+                    <th>Score</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#A-029</td>
+                    <td>Joueur42</td>
+                    <td>85</td>
+                    <td>14/05/2023</td>
+                  </tr>
+                  <tr>
+                    <td>#A-028</td>
+                    <td>GreenLife</td>
+                    <td>90</td>
+                    <td>13/05/2023</td>
+                  </tr>
+                  <tr>
+                    <td>#A-027</td>
+                    <td>EcoWarrior</td>
+                    <td>75</td>
+                    <td>12/05/2023</td>
+                  </tr>
+                  <tr>
+                    <td>#A-026</td>
+                    <td>NatureLover</td>
+                    <td>70</td>
+                    <td>11/05/2023</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="card-footer">
+            <span>4 rapports générés cette semaine</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="stats" style="display:none">
+      <h2 style="margin-bottom:12px">Statistiques Globales</h2>
+      
+      <div class="grid">
+        <article class="card">
+          <div>
+            <div class="accent m3"></div>
+            <h3>Vue d'Ensemble</h3>
+            <div class="meta">Statistiques globales de la communauté</div>
+
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-value">142</div>
+                <div class="stat-label">Actions totales</div>
               </div>
-              <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 8px;">
-                <div style="font-size: 13px; color: var(--muted)">08/05/2023 - Plantation arbres</div>
-                <div style="font-size: 14px; margin-top: 6px;">"Les 3 arbres plantés séquestreront environ 120kg de CO₂ par année."</div>
+              <div class="stat-card">
+                <div class="stat-value">87%</div>
+                <div class="stat-label">Taux validation</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">68</div>
+                <div class="stat-label">Joueurs actifs</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">9,240</div>
+                <div class="stat-label">Points totaux</div>
+              </div>
+            </div>
+
+            <div style="margin-top: 16px;">
+              <div style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Répartition des types d'actions:</div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px;">
+                    <span>Nettoyage espaces publics</span>
+                    <span>42%</span>
+                  </div>
+                  <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;">
+                    <div style="height: 100%; width: 42%; background: var(--vivid-green); border-radius: 3px;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px;">
+                    <span>Plantation</span>
+                    <span>28%</span>
+                  </div>
+                  <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;">
+                    <div style="height: 100%; width: 28%; background: var(--neon-pink); border-radius: 3px;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px;">
+                    <span>Sensibilisation</span>
+                    <span>18%</span>
+                  </div>
+                  <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;">
+                    <div style="height: 100%; width: 18%; background: var(--crimson); border-radius: 3px;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px;">
+                    <span>Transport écologique</span>
+                    <span>12%</span>
+                  </div>
+                  <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;">
+                    <div style="height: 100%; width: 12%; background: var(--white); border-radius: 3px;"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           
           <div class="card-footer">
-            <span>2 rapports générés</span>
+            <span>Mise à jour: aujourd'hui 14:30</span>
           </div>
         </article>
 
         <article class="card">
           <div>
             <div class="accent m3"></div>
-            <h3>Classement & Récompenses</h3>
-            <div class="meta">Votre position dans la communauté</div>
+            <h3>Performance Mensuelle</h3>
+            <div class="meta">Évolution des activités sur 30 jours</div>
 
-            <div style="text-align: center; margin: 20px 0;">
-              <div style="font-size: 48px; font-weight: 700; color: var(--vivid-green); line-height: 1;">15</div>
-              <div style="font-size: 14px; color: var(--muted)">Position globale</div>
+            <div style="margin: 20px 0;">
+              <div style="display: flex; justify-content: space-around; height: 200px; align-items: flex-end;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <div style="width: 30px; height: 120px; background: linear-gradient(to top, var(--vivid-green), #d0ff6b); border-radius: 4px;"></div>
+                  <div style="font-size: 11px; color: var(--muted); margin-top: 8px;">Sem 1</div>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <div style="width: 30px; height: 80px; background: linear-gradient(to top, var(--vivid-green), #d0ff6b); border-radius: 4px;"></div>
+                  <div style="font-size: 11px; color: var(--muted); margin-top: 8px;">Sem 2</div>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <div style="width: 30px; height: 150px; background: linear-gradient(to top, var(--vivid-green), #d0ff6b); border-radius: 4px;"></div>
+                  <div style="font-size: 11px; color: var(--muted); margin-top: 8px;">Sem 3</div>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <div style="width: 30px; height: 180px; background: linear-gradient(to top, var(--vivid-green), #d0ff6b); border-radius: 4px;"></div>
+                  <div style="font-size: 11px; color: var(--muted); margin-top: 8px;">Sem 4</div>
+                </div>
+              </div>
             </div>
 
             <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; margin-top: 12px;">
-              <div style="font-size: 13px; color: var(--muted); margin-bottom: 6px;">Prochain palier:</div>
-              <div style="font-size: 14px; font-weight: 600;">Top 10 (50 points requis)</div>
-              <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin-top: 8px;">
-                <div style="height: 100%; width: 70%; background: var(--vivid-green); border-radius: 3px;"></div>
-              </div>
+              <div style="font-size: 13px; color: var(--muted); margin-bottom: 6px;">Tendance:</div>
+              <div style="font-size: 14px; font-weight: 600; color: var(--vivid-green)">↑ Croissance de 45% ce mois-ci</div>
             </div>
           </div>
           
           <div class="card-footer">
-            <span>35 points jusqu'au Top 10</span>
+            <span>Données basées sur les 30 derniers jours</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <div class="accent m3"></div>
+            <h3>Top Performers</h3>
+            <div class="meta">Joueurs les plus actifs de la communauté</div>
+
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Position</th>
+                    <th>Joueur</th>
+                    <th>Actions</th>
+                    <th>Points</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>EcoWarrior</td>
+                    <td>24</td>
+                    <td>1,850</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>GreenMaster</td>
+                    <td>21</td>
+                    <td>1,720</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>NatureLover</td>
+                    <td>19</td>
+                    <td>1,540</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>EarthGuardian</td>
+                    <td>17</td>
+                    <td>1,380</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Joueur42</td>
+                    <td>15</td>
+                    <td>1,210</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="card-footer">
+            <span>Classement mis à jour quotidiennement</span>
           </div>
         </article>
       </div>
     </section>
 
     <footer>
-      <div>Module Community Impact & Reporting — Student 3</div>
+      <div>Module Community Impact & Reporting — Back Office</div>
       <div style="margin-top:6px">Clear Aether — Game for Good Project</div>
     </footer>
   </main>
@@ -504,28 +671,37 @@
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         this.classList.add('active');
         
-       
         const target = this.getAttribute('href').substring(1);
-        document.getElementById('submit').style.display = target === 'submit' ? 'block' : 'none';
-        document.getElementById('actions').style.display = target === 'actions' ? 'block' : 'none';
-        document.getElementById('impact').style.display = target === 'impact' ? 'block' : 'none';
+        document.getElementById('pending').style.display = target === 'pending' ? 'block' : 'none';
+        document.getElementById('reports').style.display = target === 'reports' ? 'block' : 'none';
+        document.getElementById('stats').style.display = target === 'stats' ? 'block' : 'none';
       });
     });
 
-  
-    document.querySelector('.small-btn.front').addEventListener('click', function() {
-      const actionType = document.querySelector('select').value;
-      const description = document.querySelector('textarea').value;
+    function viewAction(id) {
+      alert(`Voir les détails de l'action #A-${id}`);
+    }
+
+    function validateAction(id) {
+      if (confirm(`Êtes-vous sûr de vouloir valider l'action #A-${id} ?`)) {
+        alert(`Action #A-${id} validée avec succès!`);
+      }
+    }
+
+    document.querySelector('#reports .small-btn.back').addEventListener('click', function() {
+      const actionSelect = document.querySelector('#reports select');
+      const scoreSelect = document.querySelector('#reports select:nth-of-type(2)');
+      const description = document.querySelector('#reports textarea');
       
-      if (!actionType || !description) {
-        alert('Veuillez remplir tous les champs obligatoires');
+      if (!actionSelect.value || !scoreSelect.value || !description.value) {
+        alert('Veuillez remplir tous les champs du rapport');
         return;
       }
       
-      alert('Action soumise avec succès! En attente de validation.');
-      document.querySelector('select').value = '';
-      document.querySelector('textarea').value = '';
-      document.querySelector('input[type="text"]').value = '';
+      alert('Rapport d\'impact généré avec succès!');
+      actionSelect.value = '';
+      scoreSelect.value = '50';
+      description.value = '';
     });
   </script>
 
